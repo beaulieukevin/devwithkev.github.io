@@ -1,10 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<body>
+  <script>
+    function isMobile() {
+      return /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
 
-  <meta http-equiv="refresh" content="0;linkedin://profile/beaulieukevin">
-
-</head>
+    if (isMobile()) {
+      window.location.href = "linkedin://profile/beaulieukevin";
+    } else {
+      window.location.href = "https://www.linkedin.com/in/beaulieukevin";
+    }
+  </script>
+</body>
 
 </html>
