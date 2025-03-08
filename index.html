@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<body>
+<head>
+  <title>Kevin Beaulieu</title>
   <script>
-    function isMobile() {
-      return /Android|iPhone|iPad/i.test(navigator.userAgent);
-    }
+    function openLinkedInApp() {
+      var appLink = "linkedin://profile/beaulieukevin";
+      var webFallback = "https://www.linkedin.com/in/beaulieukevin";
 
-    if (isMobile()) {
-      window.location.href = "linkedin://profile/beaulieukevin";
-    } else {
-      window.location.href = "https://www.linkedin.com/in/beaulieukevin";
+      window.location.href = appLink;
+
+      setTimeout(function() {
+        window.location.href = webFallback;
+      }, 1000);
     }
   </script>
+</head>
+
+<body onload="openLinkedInApp()">
 </body>
 
 </html>
