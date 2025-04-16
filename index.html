@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,28 +17,39 @@
             text-align: center;
             font-family: Arial, sans-serif;
         }
+
         .message {
             font-size: 2rem;
             opacity: 0.8;
             transition: opacity 0.5s ease-in-out;
         }
+
         .message:hover {
             opacity: 1;
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex justify-content-center align-items-center">
-                <p class="message">Go back!</p>
-            </div>
-        </div>
-		<div class="row">
-            <div class="col-12 d-flex justify-content-center align-items-center">
-                <p class="message">There is nothing to see here.</p>
+                <p id="title" class="message"></p>
             </div>
         </div>
     </div>
+
+    <script>
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        const title = getQueryParam('title');
+
+        const header = document.getElementById('title');
+        header.textContent = title ? decodeURIComponent(title) : 'There is nothing to see here.';
+    </script>
 </body>
+
 </html>
